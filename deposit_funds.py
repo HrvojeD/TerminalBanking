@@ -5,6 +5,10 @@ def deposit_funds(users: dict):
 
     deposit_funds_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
 
+    while deposit_funds_user_input.lower().strip() != "da" and deposit_funds_user_input.lower().strip() != "ne":
+        print(constants.INVALID_BACK_TO_MAIN_MENU_ANSWER_WARNING)
+        deposit_funds_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
+
     if deposit_funds_user_input.lower().strip() == "da":
         return False
 

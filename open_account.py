@@ -6,6 +6,10 @@ def display_account_opening_options():
 
     open_account_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
 
+    while open_account_user_input.lower().strip() != "da" and open_account_user_input.lower().strip() != "ne":
+        print(constants.INVALID_BACK_TO_MAIN_MENU_ANSWER_WARNING)
+        open_account_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
+
     if open_account_user_input.lower().strip() == "da":
         return False
 

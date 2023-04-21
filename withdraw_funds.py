@@ -5,6 +5,10 @@ def withdraw_funds(users: dict):
 
     withdraw_funds_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
 
+    while withdraw_funds_user_input.lower().strip() != "da" and withdraw_funds_user_input.lower().strip() != "ne":
+        print(constants.INVALID_BACK_TO_MAIN_MENU_ANSWER_WARNING)
+        withdraw_funds_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
+
     if withdraw_funds_user_input.lower().strip() == "da":
         return False
 

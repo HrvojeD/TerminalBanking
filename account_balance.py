@@ -5,6 +5,10 @@ def display_account_balance(users: dict):
 
     account_balance_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
 
+    while account_balance_user_input.lower().strip() != "da" and account_balance_user_input.lower().strip() != "ne":
+        print(constants.INVALID_BACK_TO_MAIN_MENU_ANSWER_WARNING)
+        account_balance_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
+
     if account_balance_user_input.lower().strip() == "da":
         return False
 
