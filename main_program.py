@@ -2,6 +2,8 @@ import constants
 import menu
 import open_account
 import account_balance
+import deposit_funds
+import withdraw_funds
 
 users = {}
 
@@ -25,9 +27,11 @@ def run_main_program():
             case "3":
                 print(3)
             case "4":
-                print(4)
+                deposit_funds.deposit_funds(users)
+                main_menu_user_choice = menu.display_menu(constants.MAIN_MENU_ITEMS)
             case "5":
-                print(5)
+                withdraw_funds.withdraw_funds(users)
+                main_menu_user_choice = menu.display_menu(constants.MAIN_MENU_ITEMS)
 
 
 run_main_program()
