@@ -20,6 +20,7 @@ def deposit_funds(users: dict):
             deposit_amount = int(input(constants.DEPOSIT_FUNDS_PROMPT))
             if deposit_amount >= 0:
                 users[account_number]["account_balance"] += deposit_amount
+                users[account_number]["transaction_history"].append(f" +{deposit_amount}")
                 print(constants.LINE_SEPARATOR)
                 print(f"Uspješno ste uplatili {deposit_amount} EUR na račun {account_number}!")
                 print(constants.LINE_SEPARATOR)

@@ -28,6 +28,7 @@ def withdraw_funds(users: dict):
                 withdraw_amount = int(input(constants.WITHDRAW_FUNDS_PROMPT))
                 if withdraw_amount >= 0:
                     users[account_number]["account_balance"] -= withdraw_amount
+                    users[account_number]["transaction_history"].append(f" -{withdraw_amount}")
                     print(constants.LINE_SEPARATOR)
                     print(f"Uspješno ste podigli {withdraw_amount} EUR s računa {account_number}!")
                     print(constants.LINE_SEPARATOR)

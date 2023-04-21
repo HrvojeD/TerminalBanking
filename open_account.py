@@ -33,7 +33,8 @@ def display_account_opening_options():
                     "user_name": user_name,
                     "user_last_name": user_last_name,
                     "user_oib": user_oib,
-                    "account_balance": 0}
+                    "account_balance": 0,
+                    "transaction_history": []}
 
         else:
             display_account_opening_options()
