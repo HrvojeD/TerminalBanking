@@ -2,7 +2,6 @@ import constants
 
 
 def withdraw_funds(users: dict) -> bool:
-
     print(constants.LINE_SEPARATOR)
     account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER))
 
@@ -14,20 +13,27 @@ def withdraw_funds(users: dict) -> bool:
             user_oib = int(input(constants.ENTER_OIB_PROMPT))
 
         if str(user_oib) in str(users[account_number].get("user_oib")):
-            withdraw_amount = int(input(constants.WITHDRAW_FUNDS_PROMPT))
+            try:
+                withdraw_amount = float(input(constants.WITHDRAW_FUNDS_PROMPT))
 
-            if withdraw_amount >= 0:
-                users[account_number]["account_balance"] -= withdraw_amount
-                users[account_number]["transaction_history"].append(f" -{withdraw_amount}")
-                print(constants.LINE_SEPARATOR)
-                print(f" Uspješno ste podigli {withdraw_amount} EUR s računa {account_number}!")
-                print(constants.LINE_SEPARATOR)
-                print()
-                withdraw_amount = 0
+                if withdraw_amount >= 0:
+                    users[account_number]["account_balance"] -= withdraw_amount
+                    users[account_number]["transaction_history"].append(f" -{withdraw_amount}")
+                    print(constants.LINE_SEPARATOR)
+                    print(f" Uspješno ste podigli {withdraw_amount} EUR s računa {account_number}!")
+                    print(constants.LINE_SEPARATOR)
+                    print()
+                    withdraw_amount = 0
 
-            else:
+                else:
+                    print(constants.LINE_SEPARATOR)
+                    print(constants.INVALID_WITHDRAW_WARNING)
+                    print(constants.LINE_SEPARATOR)
+                    print()
+
+            except ValueError:
                 print(constants.LINE_SEPARATOR)
-                print(constants.INVALID_DEPOSIT_WARNING)
+                print(constants.INVALID_TYPE_ERROR)
                 print(constants.LINE_SEPARATOR)
                 print()
 

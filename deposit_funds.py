@@ -7,20 +7,27 @@ def deposit_funds(users: dict) -> bool:
     account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER))
 
     if account_number in users.keys():
-        deposit_amount = int(input(constants.DEPOSIT_FUNDS_PROMPT))
+        try:
+            deposit_amount = float(input(constants.DEPOSIT_FUNDS_PROMPT))
 
-        if deposit_amount >= 0:
-            users[account_number]["account_balance"] += deposit_amount
-            users[account_number]["transaction_history"].append(f" +{deposit_amount}")
-            print(constants.LINE_SEPARATOR)
-            print(f" Uspješno ste uplatili {deposit_amount} EUR na račun {account_number}!")
-            print(constants.LINE_SEPARATOR)
-            print()
-            deposit_amount = 0
+            if deposit_amount >= 0:
+                users[account_number]["account_balance"] += deposit_amount
+                users[account_number]["transaction_history"].append(f" +{deposit_amount}")
+                print(constants.LINE_SEPARATOR)
+                print(f" Uspješno ste uplatili {deposit_amount} EUR na račun {account_number}!")
+                print(constants.LINE_SEPARATOR)
+                print()
+                deposit_amount = 0
 
-        else:
+            else:
+                print(constants.LINE_SEPARATOR)
+                print(constants.INVALID_DEPOSIT_WARNING)
+                print(constants.LINE_SEPARATOR)
+                print()
+
+        except ValueError:
             print(constants.LINE_SEPARATOR)
-            print(constants.INVALID_DEPOSIT_WARNING)
+            print(constants.INVALID_TYPE_ERROR)
             print(constants.LINE_SEPARATOR)
             print()
 
