@@ -1,7 +1,7 @@
 import constants
 
 
-def display_transaction_history(users:dict):
+def display_transaction_history(users: dict) -> bool:
 
     print(constants.LINE_SEPARATOR)
     account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER))

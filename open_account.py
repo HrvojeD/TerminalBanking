@@ -1,10 +1,9 @@
 import random
-import time
-
+from typing import Union
 import constants
 
 
-def display_account_opening_options():
+def display_account_opening_options() -> Union[dict, bool]:
 
     print(constants.LINE_SEPARATOR)
     user_name = input(constants.ENTER_NAME_PROMPT)

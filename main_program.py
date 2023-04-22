@@ -9,7 +9,7 @@ import transaction_history
 users = {}
 
 
-def run_main_program():
+def run_main_program() -> None:
 
     main_menu_user_choice = menu.display_menu(constants.MAIN_MENU_ITEMS)
 

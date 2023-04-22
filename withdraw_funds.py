@@ -1,7 +1,7 @@
 import constants
 
 
-def withdraw_funds(users: dict):
+def withdraw_funds(users: dict) -> bool:
 
     print(constants.LINE_SEPARATOR)
     account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER))

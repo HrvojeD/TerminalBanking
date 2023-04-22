@@ -1,7 +1,7 @@
 import constants
 
 
-def display_account_balance(users: dict):
+def display_account_balance(users: dict) -> bool:
 
     print(constants.LINE_SEPARATOR)
     account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER))
