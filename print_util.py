@@ -1,4 +1,7 @@
+import time
+
 import constants
+import countdown
 
 
 def print_account_open_success(user_name: str, user_last_name: str, account_number: int) -> None:
@@ -72,6 +75,7 @@ def print_account_balance(account_number: int, users: dict):
 def print_unknown_main_menu_option(user_input: str):
     print()
     print(constants.LINE_SEPARATOR)
-    print(f" Unijeli ste '{user_input}' što ne odgovara ni jednoj od ponuđenih opcija. \n Povratak na glavni izbornik")
+    print(f" Unijeli ste '{user_input}' što ne odgovara ni jednoj od ponuđenih opcija.")
     print(constants.LINE_SEPARATOR)
     print()
+    print("Povratak na glavni izbornik za: ")

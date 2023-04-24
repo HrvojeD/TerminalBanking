@@ -1,4 +1,5 @@
 import constants
+import countdown
 import menu
 import open_account
 import account_balance
@@ -43,6 +44,7 @@ def run_main_program() -> None:
 
             case _:
                 print_util.print_unknown_main_menu_option(main_menu_user_choice)
+                countdown.display_countdown(3)
                 main_menu_user_choice = menu.display_menu(constants.MAIN_MENU_ITEMS)
 
 
