@@ -5,6 +5,7 @@ import account_balance
 import deposit_funds
 import withdraw_funds
 import transaction_history
+import print_util
 
 users = {}
 
@@ -38,6 +39,10 @@ def run_main_program() -> None:
 
             case "5":
                 withdraw_funds.withdraw_funds(users)
+                main_menu_user_choice = menu.display_menu(constants.MAIN_MENU_ITEMS)
+
+            case _:
+                print_util.print_unknown_main_menu_option(main_menu_user_choice)
                 main_menu_user_choice = menu.display_menu(constants.MAIN_MENU_ITEMS)
 
 

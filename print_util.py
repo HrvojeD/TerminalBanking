@@ -67,3 +67,11 @@ def print_account_balance(account_number: int, users: dict):
           f" Stanje vašeg računa je {users[account_number].get('account_balance')} EUR")
     print(constants.LINE_SEPARATOR)
     print()
+
+
+def print_unknown_main_menu_option(user_input: str):
+    print()
+    print(constants.LINE_SEPARATOR)
+    print(f" Unijeli ste '{user_input}' što ne odgovara ni jednoj od ponuđenih opcija. \n Povratak na glavni izbornik")
+    print(constants.LINE_SEPARATOR)
+    print()
