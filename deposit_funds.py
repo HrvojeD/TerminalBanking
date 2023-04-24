@@ -4,7 +4,7 @@ import main_menu_helpers
 import print_util
 
 
-def deposit_funds(users: dict):
+def deposit_funds(users: dict) -> None:
 
     print(constants.LINE_SEPARATOR)
     account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER).strip())

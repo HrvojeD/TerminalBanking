@@ -4,7 +4,7 @@ import print_util
 import banking_actions
 
 
-def withdraw_funds(users: dict) -> bool:
+def withdraw_funds(users: dict) -> None:
     print(constants.LINE_SEPARATOR)
     account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER).strip())
 

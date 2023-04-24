@@ -5,7 +5,7 @@ import main_menu_helpers
 import print_util
 
 
-def display_account_opening_options() -> Union[dict, bool]:
+def display_account_opening_options() -> Union[dict, None]:
 
     print(constants.LINE_SEPARATOR)
     user_name = input(constants.ENTER_NAME_PROMPT)

@@ -1,7 +1,4 @@
-import time
-
 import constants
-import countdown
 
 
 def print_account_open_success(user_name: str, user_last_name: str, account_number: int) -> None:
@@ -29,7 +26,7 @@ def print_withdraw_success(withdraw_amount: float, account_number: int) -> None:
     print()
 
 
-def print_deposit_success(deposit_amount: float, account_number: int):
+def print_deposit_success(deposit_amount: float, account_number: int) -> None:
     print(constants.LINE_SEPARATOR)
     print(f" Uspješno ste uplatili {deposit_amount} EUR na račun {account_number}!")
     print(constants.LINE_SEPARATOR)
@@ -64,7 +61,7 @@ def print_invalid_account_number_error(account_number: int) -> None:
     print()
 
 
-def print_account_balance(account_number: int, users: dict):
+def print_account_balance(account_number: int, users: dict) -> None:
     print(constants.LINE_SEPARATOR)
     print(f" Dobar dan {users[account_number].get('user_name')}!\n"
           f" Stanje vašeg računa je {users[account_number].get('account_balance')} EUR")
@@ -72,7 +69,7 @@ def print_account_balance(account_number: int, users: dict):
     print()
 
 
-def print_unknown_main_menu_option(user_input: str):
+def print_unknown_main_menu_option(user_input: str) -> None:
     print()
     print(constants.LINE_SEPARATOR)
     print(f" Unijeli ste '{user_input}' što ne odgovara ni jednoj od ponuđenih opcija.")
