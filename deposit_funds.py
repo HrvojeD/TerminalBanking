@@ -10,7 +10,7 @@ def deposit_funds(users: dict):
     account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER).strip())
 
     if account_number in users.keys():
-        banking_actions.deposit_money(account_number, users)
+        banking_actions.deposit_funds(account_number, users)
 
     else:
         print_util.print_invalid_account_number_error(account_number)

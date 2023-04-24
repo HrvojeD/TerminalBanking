@@ -19,7 +19,7 @@ def withdraw_funds(account_number: int, users: dict) -> None:
         print_util.print_invalid_type_error()
 
 
-def deposit_money(account_number: int, users: dict) -> None:
+def deposit_funds(account_number: int, users: dict) -> None:
     try:
         deposit_amount = float(input(constants.DEPOSIT_FUNDS_PROMPT))
 
