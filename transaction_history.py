@@ -1,10 +1,11 @@
 import constants
+import print_util
 
 
 def display_transaction_history(users: dict) -> bool:
 
     print(constants.LINE_SEPARATOR)
-    account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER))
+    account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER).strip())
 
     if account_number in users.keys():
         user_oib = int(input(constants.ENTER_OIB_PROMPT))
@@ -14,13 +15,7 @@ def display_transaction_history(users: dict) -> bool:
             user_oib = int(input(constants.ENTER_OIB_PROMPT))
 
         if str(user_oib) in str(users[account_number].get("user_oib")):
-            print(constants.LINE_SEPARATOR)
-            print(f" Povijest transakcija na računu {account_number}")
-            print(constants.LINE_SEPARATOR)
-
-            for transaction in users[account_number].get("transaction_history"):
-                print(f"{transaction}")
-            print()
+            print_util.print_transaction_history(account_number, users)
 
     transaction_history_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
 

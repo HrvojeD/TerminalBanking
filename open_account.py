@@ -1,6 +1,7 @@
 import random
 from typing import Union
 import constants
+import print_util
 
 
 def display_account_opening_options() -> Union[dict, bool]:
@@ -16,11 +17,7 @@ def display_account_opening_options() -> Union[dict, bool]:
 
     if (input(constants.IS_DATA_VALID_PROMPT)).lower().strip() == "da":
         account_number = random.randint(9999, 99999)
-        print(constants.LINE_SEPARATOR)
-        print(f" {user_name} {user_last_name}, uspješno ste otvorili račun.")
-        print(f" Vaš broj računa je {account_number}")
-        print(constants.LINE_SEPARATOR)
-        print()
+        print_util.print_account_open_success(user_name, user_last_name, account_number)
         return {"account_number": account_number,
                 "user_name": user_name,
                 "user_last_name": user_last_name,

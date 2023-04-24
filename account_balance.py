@@ -4,7 +4,7 @@ import constants
 def display_account_balance(users: dict) -> bool:
 
     print(constants.LINE_SEPARATOR)
-    account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER))
+    account_number: int = int(input(constants.ENTER_ACCOUNT_NUMBER).strip())
 
     if account_number in users.keys():
         user_oib = int(input(constants.ENTER_OIB_PROMPT))
