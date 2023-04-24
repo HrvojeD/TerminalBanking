@@ -1,6 +1,7 @@
 import random
 from typing import Union
 import constants
+import main_menu_helpers
 import print_util
 
 
@@ -25,13 +26,4 @@ def display_account_opening_options() -> Union[dict, bool]:
                 "account_balance": 0,
                 "transaction_history": []}
 
-    open_account_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
-
-    while open_account_user_input.lower().strip() != "da" and open_account_user_input.lower().strip() != "ne":
-        print(constants.INVALID_BACK_TO_MAIN_MENU_ANSWER_WARNING)
-        open_account_user_input = input(constants.BACK_TO_MAIN_MENU_STRING)
-
-    if open_account_user_input.lower().strip() == "da":
-        return False
-    else:
-        display_account_opening_options()
+    main_menu_helpers.return_to_main_menu_prompt(display_account_opening_options)

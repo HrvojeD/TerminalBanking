@@ -59,3 +59,11 @@ def print_invalid_account_number_error(account_number: int) -> None:
     print(f" Korisnik s brojem računa {account_number} nije pronađen.")
     print(constants.LINE_SEPARATOR)
     print()
+
+
+def print_account_balance(account_number: int, users: dict):
+    print(constants.LINE_SEPARATOR)
+    print(f" Dobar dan {users[account_number].get('user_name')}!\n"
+          f" Stanje vašeg računa je {users[account_number].get('account_balance')} EUR")
+    print(constants.LINE_SEPARATOR)
+    print()
